@@ -1,0 +1,12 @@
+DOCTOR OK
+pid 4216
+cwd /workspace
+log /tmp/verify-rwa/yarn-dev.log
+stdout /tmp/verify-rwa/yarn-dev.log
+node v22.20.0 at /home/ubuntu/.nvm/versions/node/v22.20.0/bin/node
+yarn 1.22.22
+ports 3000 and 3001 are held by descendants of 4216
+backend pid 4369 NODE_ENV=development
+seed users are present
+frontend http://localhost:3000
+api http://localhost:3001

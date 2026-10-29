@@ -1,0 +1,331 @@
+yarn run v1.22.22
+$ yarn db:seed:dev
+$ yarn predev:cognito:ci
+$ yarn copy:mock:awsexports && yarn copy:mock:awsexportses5
+$ ncp scripts/mock-aws-exports.js src/aws-exports.js
+$ ncp scripts/mock-aws-exports-es5.js aws-exports-es5.js
+$ ncp ./data/database-seed.json ./data/database.json
+$ cross-env NODE_ENV=development concurrently yarn:start:react yarn:start:api:watch
+[start:react] $ vite
+[start:api:watch] $ nodemon --exec yarn tsnode --watch 'backend' backend/app.ts
+[start:api:watch] [33m[nodemon] 2.0.22[39m
+[start:api:watch] [33m[nodemon] to restart at any time, enter `rs`[39m
+[start:api:watch] [33m[nodemon] watching path(s): backend/**/*[39m
+[start:api:watch] [33m[nodemon] watching extensions: ts,json[39m
+[start:api:watch] [32m[nodemon] starting `yarn tsnode backend/app.ts`[39m
+[start:api:watch] $ nyc --silent ts-node -P tsconfig.tsnode.json backend/app.ts
+[start:react] (!) Your Vite config uses features that are unsupported by `configLoader: 'native'`, which is planned to become the default in a future major version of Vite:
+[start:react]   - ESM syntax in a file loaded as CommonJS (vite.config.ts:1:1). Use a `.mjs` extension or set `"type": "module"` in the closest package.json
+[start:react] Set `VITE_CONFIG_NATIVE_IGNORE_WARNING=true` to suppress this warning.
+[start:react] 
+[start:react]   VITE v8.2.2  ready in 439 ms
+[start:react] 
+[start:react]   ➜  Local:   http://localhost:3000/
+[start:react]   ➜  Network: use --host to expose
+[start:react] 8:20:46 AM [vite] (client) [optimizer] bundling dependencies...
+[start:api:watch] Browserslist: browsers data (caniuse-lite) is 12 months old. Please run:
+[start:api:watch]   npx update-browserslist-db@latest
+[start:api:watch]   Why you should do it regularly: https://github.com/browserslist/update-db#readme
+[start:api:watch] express-validator: sanitize(), sanitizeBody() and other sanitization-only middlewares have been deprecated.
+[start:api:watch] Please use check(), body() and others instead, which must offer the same API, and more.
+[start:api:watch] Backend server running at http://localhost:3001
+[start:api:watch] [0mGET / [32m200[0m 2.104 ms - 31[0m
+[start:api:watch] [0mGET / [32m200[0m 0.539 ms - 31[0m
+[start:api:watch] [0mGET / [32m200[0m 0.751 ms - 31[0m
+[start:api:watch] [0mGET /testData/users [32m200[0m 4.816 ms - 2314[0m
+[start:api:watch] [0mGET / [32m200[0m 0.468 ms - 31[0m
+[start:api:watch] [0mGET /testData/users [32m200[0m 1.332 ms - 2314[0m
+[start:api:watch] [0mHEAD / [32m200[0m 0.422 ms - 31[0m
+[start:api:watch] [0mPOST /testData/seed [32m200[0m 17.857 ms - 2[0m
+[start:react] 8:22:32 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#notifications.success.unknown".
+[start:react] 8:22:32 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#bankAccounts.success.unknown".
+[start:react] 8:22:32 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-color`. Did you mean `stopColor`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:react] 8:22:32 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-opacity`. Did you mean `stopOpacity`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:api:watch] [0mPOST /login [33m401[0m 2.562 ms - -[0m
+[start:api:watch] [0mPOST /testData/seed [32m200[0m 3.614 ms - 2[0m
+[start:api:watch] [0mGET /testData/users [32m200[0m 0.900 ms - 2314[0m
+[start:react] 8:22:33 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#notifications.success.unknown".
+[start:react] 8:22:33 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#bankAccounts.success.unknown".
+[start:react] 8:22:33 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-color`. Did you mean `stopColor`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:react] 8:22:33 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-opacity`. Did you mean `stopOpacity`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:api:watch] [0mPOST /login [33m401[0m 74.546 ms - -[0m
+[start:api:watch] [0mGET / [32m200[0m 0.443 ms - 31[0m
+[start:api:watch] [0mGET /testData/users [32m200[0m 1.007 ms - 2314[0m
+[start:api:watch] [0mHEAD / [32m200[0m 0.406 ms - 31[0m
+[start:api:watch] [0mPOST /testData/seed [32m200[0m 4.975 ms - 2[0m
+[start:react] 8:23:03 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#notifications.success.unknown".
+[start:react] 8:23:03 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#bankAccounts.success.unknown".
+[start:react] 8:23:03 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-color`. Did you mean `stopColor`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:react] 8:23:03 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-opacity`. Did you mean `stopOpacity`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:api:watch] [0mPOST /login [33m401[0m 1.039 ms - -[0m
+[start:api:watch] [0mPOST /testData/seed [32m200[0m 4.115 ms - 2[0m
+[start:api:watch] [0mGET /testData/users [32m200[0m 1.061 ms - 2314[0m
+[start:react] 8:23:04 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#notifications.success.unknown".
+[start:react] 8:23:04 AM [vite] (client) [console.warn] Warning: Empty string transition configs (e.g., `{ on: { '': ... }}`) for transient transitions are deprecated. Specify the transition in the `{ always: ... }` property instead. Please check the `on` configuration for "#bankAccounts.success.unknown".
+[start:react] 8:23:04 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-color`. Did you mean `stopColor`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:react] 8:23:04 AM [vite] (client) [console.error] Warning: Invalid DOM property `stop-opacity`. Did you mean `stopOpacity`?
+[start:react]     at stop
+[start:react]     at linearGradient
+[start:react]     at defs
+[start:react]     at svg
+[start:react]     at SvgCypressLogo
+[start:react]     at a
+[start:react]     at p
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Typography (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:5353:21)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at Footer
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Box (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1108:17)
+[start:react]     at main
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at Container (http://localhost:3000/node_modules/.vite/deps/@mui_material.js?v=59b38028:1416:17)
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at SignInForm (http://localhost:3000/src/components/SignInForm.tsx:41:23)
+[start:react]     at Route (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:702:27)
+[start:react]     at Switch (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:839:27)
+[start:react]     at div
+[start:react]     at http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:1592:53
+[start:react]     at App (http://localhost:3000/src/containers/App.tsx:29:22)
+[start:react]     at DefaultPropsProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:303:33)
+[start:react]     at RtlProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:342:8)
+[start:react]     at ThemeProvider$2 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:306:10)
+[start:react]     at ThemeProvider$1 (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:383:10)
+[start:react]     at ThemeProvider (http://localhost:3000/node_modules/.vite/deps/styles-wqjquxzG.js?v=d40a7c58:1302:15)
+[start:react]     at StyledEngineProvider (http://localhost:3000/node_modules/.vite/deps/styled-BDaH55EP.js?v=d40a7c58:2423:10)
+[start:react]     at Router (http://localhost:3000/node_modules/.vite/deps/react-router.js?v=3ffce216:459:32)
+[start:api:watch] [0mPOST /login [33m401[0m 62.326 ms - -[0m
