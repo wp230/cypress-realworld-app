@@ -1,0 +1,61 @@
+name: Auth verification
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: auth-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  auth:
+    name: auth-verification
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .node-version
+          package-manager-cache: false
+
+      - name: Install Yarn Classic
+        run: npm install --global yarn@1.22.22
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Copy Cognito mock exports
+        run: yarn predev:cognito:ci
+
+      - name: Typecheck
+        run: yarn types
+
+      - name: Auth UI specs
+        uses: cypress-io/github-action@v7
+        with:
+          install: false
+          start: yarn dev
+          wait-on: http://localhost:3000,http://localhost:3001
+          wait-on-timeout: 120
+          spec: cypress/tests/ui/auth.spec.ts,cypress/tests/ui/auth-retry.spec.ts
+          config: video=true
+
+      - name: Upload auth evidence
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: auth-evidence-${{ github.event.pull_request.head.sha }}
+          path: |
+            cypress/screenshots
+            cypress/videos
+          if-no-files-found: ignore
