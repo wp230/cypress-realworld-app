@@ -1,0 +1,22 @@
+command: .cursor/skills/verify-rwa/helpers/launch.sh
+exit_code: 0
+pid: 4216
+node: v22.20.0
+node_path: /home/ubuntu/.nvm/versions/node/v22.20.0/bin/node
+yarn: 1.22.22
+
+command: .cursor/skills/verify-rwa/helpers/doctor.sh
+exit_code: 0
+
+command: yarn cypress:run --spec .cursor/skills/verify-rwa/helpers/invalid-credentials.cy.ts --config {"e2e":{"specPattern":".cursor/skills/verify-rwa/helpers/invalid-credentials.cy.ts"},"video":true,"screenshotsFolder":"/tmp/verify-rwa/artifacts/screenshots","videosFolder":"/tmp/verify-rwa/artifacts/videos","trashAssetsBeforeRuns":false}
+exit_code: 0
+spec: .cursor/skills/verify-rwa/helpers/invalid-credentials.cy.ts
+subfeatures: auth-invalid-user auth-invalid-password
+node: v22.20.0
+node_path: /home/ubuntu/.nvm/versions/node/v22.20.0/bin/node
+yarn: 1.22.22
+cypress_summary:   2 passing (4s)
+
+command: .cursor/skills/verify-rwa/helpers/cleanup.sh
+exit_code: 0
+stopped_pid: 4216
